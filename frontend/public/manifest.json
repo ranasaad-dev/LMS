@@ -1,0 +1,20 @@
+{
+    "name": "My React App",
+    "short_name": "ReactApp",
+    "start_url": ".",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#000000",
+    "icons": [
+      {
+        "src": "logo.ico",
+        "sizes": "64x64 32x32 24x24 16x16",
+        "type": "image/x-icon"
+      },
+      {
+        "src": "logo.jpeg",
+        "sizes": "192x192",
+        "type": "image/jpeg"
+      }
+    ]
+  }

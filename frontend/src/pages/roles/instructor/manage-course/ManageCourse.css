@@ -1,0 +1,111 @@
+.course-manage {
+
+    padding: 40px;
+    min-height: 100vh;
+  
+    background: var(--full-dark);
+    color: var(--full-light);
+  }
+  
+  /* header */
+  
+  .course-header {
+  
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  
+    margin-bottom: 40px;
+  }
+  
+  .course-header h2 {
+    font-family: var(--heading-font);
+  }
+  
+  .course-header p {
+    color: var(--less-light);
+    margin-top: 6px;
+  }
+  
+  /* delete button */
+  
+  .delete-course-btn {
+  
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  
+    background: #b33939;
+  
+    border: none;
+  
+    padding: 10px 14px;
+  
+    border-radius: 6px;
+  
+    color: white;
+  
+    cursor: pointer;
+  }
+  
+  /* grid */
+  
+  .manage-grid {
+  
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  
+    gap: 25px;
+  }
+  
+  /* cards */
+  
+  .manage-card {
+  
+    background: var(--less-dark);
+  
+    padding: 25px;
+  
+    border-radius: 10px;
+  
+    cursor: pointer;
+  
+    transition: 0.2s;
+  
+    display: flex;
+    flex-direction: column;
+  
+    gap: 10px;
+  }
+  
+  .manage-card:hover {
+    transform: translateY(-4px);
+  }
+  
+  .manage-icon {
+    font-size: 26px;
+    color: var(--less-light);
+  }
+  
+  .manage-card h3 {
+    font-family: var(--heading-font);
+  }
+  
+  .manage-card p {
+    font-size: 14px;
+    color: var(--less-light);
+  }
+  
+  /* loading */
+  
+  .manage-loading {
+  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+    height: 80vh;
+  
+    background: var(--full-dark);
+    color: var(--full-light);
+  }

@@ -1,0 +1,130 @@
+.instructor-dashboard {
+    padding: 40px;
+    background: var(--full-dark);
+    min-height: 90vh;
+    color: var(--full-light);
+  }
+  
+  /* Header */
+  
+  .dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+  }
+  
+  .dashboard-header h2 {
+    font-family: var(--heading-font);
+  }
+  
+  .create-course-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  
+    background: var(--less-light);
+    color: var(--full-dark);
+  
+    padding: 10px 16px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 500;
+  
+    transition: 0.2s;
+  }
+  
+  .create-course-btn:hover {
+    opacity: 0.85;
+  }
+  
+  /* Courses grid */
+  
+  .course-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 25px;
+  }
+  
+  /* Course card */
+  
+  .course-card {
+    background: var(--less-dark);
+    padding: 20px;
+    border-radius: 10px;
+  
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  
+    transition: transform 0.2s ease;
+  }
+  
+  .course-card:hover {
+    transform: translateY(-4px);
+  }
+  
+  .course-info h3 {
+    font-family: var(--heading-font);
+    margin-bottom: 10px;
+  }
+  
+  .course-info p {
+    color: var(--less-light);
+    font-size: 14px;
+  }
+  
+  .course-price {
+    display: block;
+    margin-top: 12px;
+    font-weight: bold;
+  }
+  
+  /* Manage button */
+  
+  .manage-btn {
+    margin-top: 18px;
+  
+    text-align: center;
+  
+    background: var(--less-light);
+    color: var(--full-dark);
+  
+    padding: 8px;
+    border-radius: 6px;
+  
+    text-decoration: none;
+    font-weight: 500;
+  }
+  
+  /* Empty */
+  
+  .empty-courses {
+    text-align: center;
+    margin-top: 60px;
+  }
+  
+  .empty-icon {
+    font-size: 50px;
+    margin-bottom: 15px;
+    color: var(--less-light);
+  }
+  
+  .create-first-course {
+    display: inline-block;
+    margin-top: 15px;
+  
+    background: var(--less-light);
+    color: var(--full-dark);
+  
+    padding: 10px 16px;
+    border-radius: 6px;
+    text-decoration: none;
+  }
+  
+  /* Loading */
+  
+  .dashboard-loading {
+    text-align: center;
+    margin-top: 60px;
+  }

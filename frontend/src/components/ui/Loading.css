@@ -1,0 +1,18 @@
+/* Loader */
+  
+.loader {
+  width: 45px;
+  height: 45px;
+  border: 4px solid var(--less-dark);
+  border-top: 4px solid var(--full-light);
+  border-radius: 50%;
+  animation: spin 0.9s linear infinite;
+  margin-left: 47%;
+  margin-top: 9%;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

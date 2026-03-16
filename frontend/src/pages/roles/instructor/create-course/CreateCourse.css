@@ -1,0 +1,109 @@
+.create-course-page {
+    background: var(--full-dark);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+  }
+  
+  .create-course-container {
+    width: 100%;
+    max-width: 700px;
+    background: var(--less-dark);
+    padding: 40px;
+    border-radius: 10px;
+    color: var(--full-light);
+  }
+  
+  .create-course-container h2 {
+    font-family: var(--heading-font);
+    margin-bottom: 25px;
+  }
+  
+  /* form */
+  
+  .create-course-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  /* groups */
+  
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  
+  .form-group label {
+    font-size: 14px;
+    color: var(--less-light);
+  }
+  
+  /* input */
+  
+  .input-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(255,255,255,0.04);
+    padding: 10px 12px;
+    border-radius: 6px;
+  }
+  
+  .input-group input {
+    border: none;
+    outline: none;
+    background: transparent;
+    color: var(--full-light);
+    width: 100%;
+  }
+  
+  /* textarea */
+  
+  textarea {
+    background: rgba(255,255,255,0.04);
+    border: none;
+    outline: none;
+    padding: 12px;
+    border-radius: 6px;
+    color: var(--full-light);
+    resize: vertical;
+    min-height: 120px;
+  }
+  
+  /* row */
+  
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  
+  /* button */
+  
+  .create-course-btn {
+    background: var(--less-light);
+    color: var(--full-dark);
+    border: none;
+    padding: 12px;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+  }
+  
+  .create-course-btn:hover {
+    opacity: 0.85;
+  }
+  
+  /* error */
+  
+  .form-error {
+    background: rgba(255,0,0,0.15);
+    padding: 10px;
+    border-radius: 6px;
+    font-size: 14px;
+  }

@@ -1,0 +1,16 @@
+footer p{
+    margin-bottom: 10px;
+}
+footer a{
+    text-decoration: none;
+    color: var(--full-light);
+    margin-top: 2rem;
+    border: 1px solid white;
+    border-radius: 16px;
+    padding: 8px;
+}
+
+footer a:hover{
+    background-color: var(--full-light);
+    color: var(--full-dark);
+}

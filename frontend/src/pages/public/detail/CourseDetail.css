@@ -1,0 +1,108 @@
+.course-detail-container {
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    background-color: var(--full-dark);
+    min-height: 83vh;
+}
+
+.course-detail-card {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--less-dark);
+    border-radius: 12px;
+    overflow: hidden;
+    max-width: 900px;
+    width: 100%;
+    color: var(--full-light);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+.course-detail-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.course-detail-content {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: space-between;
+}
+
+.course-detail-title {
+    font-family: var(--heading-font);
+    font-size: 2.4rem;
+    margin: 10px;
+}
+
+.course-detail-desc {
+    font-family: var(--body-font);
+    font-size: 1.2rem;
+    color: #f1ecec;
+    line-height: 1.8rem;
+    margin: 5px;
+
+}
+
+.course-detail-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    font-size: 0.95rem;
+    color: var(--full-light);
+}
+
+.course-detail-meta span {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.course-detail-enroll {
+    margin-top: 1.5rem;
+}
+
+.enroll-btn {
+    background-color: var(--full-light);
+    color: var(--full-dark);
+    font-family: var(--heading-font);
+    font-size: 1rem;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.enroll-btn:hover {
+    background-color: var(--less-light);
+    transform: translateY(-2px);
+}
+
+.course-detail-loading,
+.course-detail-error {
+    font-family: var(--body-font);
+    color: var(--full-light);
+    text-align: center;
+    padding: 4rem 2rem;
+    font-size: 1.2rem;
+}
+
+/* Responsive */
+@media (min-width: 768px) {
+    .course-detail-card {
+        flex-direction: row;
+    }
+
+    .course-detail-image img {
+        width: 400px;
+        height: 100%;
+    }
+   
+    .course-detail-content {
+        flex: 1;
+    }
+}

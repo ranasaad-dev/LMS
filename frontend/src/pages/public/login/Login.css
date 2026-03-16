@@ -1,0 +1,84 @@
+/* Login.css */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #000000, #d9e2ec);
+  padding: 20px;
+}
+
+.login-card {
+  background-color: #fff;
+  padding: 40px 30px;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+.login-title {
+  font-family: var(--heading-font, "Space Grotesk", sans-serif);
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 30px;
+}
+
+.login-form .form-group {
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.login-form label {
+  display: block;
+  font-family: var(--body-font, "Inter", sans-serif);
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #050505;
+}
+
+.login-form input {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-family: var(--body-font, "Inter", sans-serif);
+  font-size: 1rem;
+  transition: border 0.2s ease;
+}
+
+.login-form input:focus {
+  outline: none;
+  border-color: #ff6f61;
+  box-shadow: 0 0 0 2px rgba(255, 111, 97, 0.2);
+}
+
+.login-btn {
+  width: 100%;
+  padding: 14px 0;
+  font-family: var(--heading-font, "Space Grotesk", sans-serif);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #fff;
+  background-color: #ff6f61;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.login-btn:hover {
+  background-color: #ff4f3c;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 480px) {
+  .login-card {
+    padding: 30px 20px;
+  }
+
+  .login-title {
+    font-size: 1.6rem;
+  }
+}

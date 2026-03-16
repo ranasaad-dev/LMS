@@ -1,0 +1,12 @@
+.wrapper-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+.main-layout {
+  flex: 1;              /* fills remaining height */
+  display: block;
+  overflow: auto;       /* prevents overflow issues if child grows */
+  background-color: var(--full-dark);
+}

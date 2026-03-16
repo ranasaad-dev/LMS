@@ -1,0 +1,140 @@
+.manage-courses-container {
+    max-width: 900px;
+    margin: 2rem auto;
+    font-family: var(--body-font);
+    color: var(--full-light);
+  }
+  
+  h2 {
+    font-family: var(--heading-font);
+    margin-bottom: 1rem;
+  }
+  
+  .add-btn {
+    background: #4caf50;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 1rem;
+  }
+  
+  .add-btn:hover {
+    background: #45a049;
+  }
+  
+  .courses-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .courses-table th,
+  .courses-table td {
+    border: 1px solid var(--less-light);
+    padding: 0.7rem;
+    text-align: left;
+  }
+  
+  .edit-btn,
+  .delete-btn {
+    background: transparent;
+    border: none;
+    color: var(--full-light);
+    cursor: pointer;
+    margin-right: 0.5rem;
+  }
+  
+  .edit-btn:hover {
+    color: #4caf50;
+  }
+  
+  .delete-btn:hover {
+    color: #f44336;
+  }
+  
+  .error {
+    color: #f44336;
+  }
+  
+  /* Modal */
+  .modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modal-content {
+    background: var(--less-dark);
+    padding: 2rem;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 500px;
+  }
+  
+  .course-form .form-group {
+    margin-bottom: 1rem;
+  }
+  
+  .course-form label {
+    display: block;
+    margin-bottom: 0.3rem;
+  }
+  
+  .course-form input,
+  .course-form textarea {
+    width: 100%;
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: 1px solid var(--less-light);
+    background: var(--full-dark);
+    color: var(--full-light);
+  }
+  
+  .course-form textarea {
+    resize: vertical;
+  }
+  
+  .course-form .form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.5rem;
+  }
+  
+  .course-form button {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .course-form button[type="submit"] {
+    background: #4caf50;
+    color: #fff;
+  }
+  
+  .course-form button[type="submit"]:hover {
+    background: #45a049;
+  }
+  
+  .course-form .cancel-btn {
+    background: #f44336;
+    color: #fff;
+  }
+  
+  .course-form .cancel-btn:hover {
+    background: #e53935;
+  }
+  .edit-icon{
+    width: 19px;
+    
+  }
+  .delete-icon{
+    width: 19px;
+  }

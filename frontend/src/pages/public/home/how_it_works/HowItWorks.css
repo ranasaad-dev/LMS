@@ -1,0 +1,69 @@
+/* HowItWorks.css */
+.how-it-works-section {
+  background: linear-gradient(135deg, #f8f9fa, #e3ebf3); /* light with bluish gradient */
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.how-it-works-section h2 {
+  font-family: var(--heading-font, "Space Grotesk", sans-serif);
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #1f2a38;
+  margin-bottom: 50px;
+}
+
+.work-steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.work-card {
+  background-color: #ffffff;
+  border-radius: 16px;
+  padding: 30px 20px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.work-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+}
+
+.work-card h4 {
+  font-family: var(--heading-font, "Space Grotesk", sans-serif);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #0d1b2a;
+  margin-bottom: 12px;
+}
+
+.work-card p {
+  font-family: var(--body-font, "Inter", sans-serif);
+  font-size: 1rem;
+  color: #3c3f44;
+  line-height: 1.6;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .how-it-works-section h2 {
+    font-size: 2rem;
+  }
+
+  .work-card {
+    padding: 25px 15px;
+  }
+
+  .work-card h4 {
+    font-size: 1.25rem;
+  }
+
+  .work-card p {
+    font-size: 0.95rem;
+  }
+}

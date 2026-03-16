@@ -1,0 +1,65 @@
+/* Testimonials.css */
+.testimonials-section {
+  background: linear-gradient(135deg, #f0f4f8, #d9e2ec);
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.testimonials-section h3 {
+  font-family: var(--heading-font, "Space Grotesk", sans-serif);
+  font-size: 2.2rem;
+  font-weight: 800;
+  margin-bottom: 50px;
+  color: #0d1b2a;
+}
+
+.testimonial-slider {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.testimonial-slide {
+  opacity: 0;
+  transform: translateX(100%);
+  transition: all 0.6s ease-in-out;
+  position: absolute;
+  width: 100%;
+}
+
+.testimonial-slide.active {
+  opacity: 1;
+  transform: translateX(0);
+  position: relative;
+}
+
+.testimonial-slide p {
+  font-family: var(--body-font, "Inter", sans-serif);
+  font-size: 1.1rem;
+  color: #1f2a38;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.testimonial-author {
+  display: block;
+  font-family: var(--body-font, "Inter", sans-serif);
+  font-size: 0.95rem;
+  color: #697565;
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .testimonials-section h3 {
+    font-size: 1.8rem;
+  }
+
+  .testimonial-slide p {
+    font-size: 1rem;
+  }
+
+  .testimonial-author {
+    font-size: 0.85rem;
+  }
+}

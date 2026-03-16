@@ -1,0 +1,95 @@
+.admin-dashboard{
+    min-height:80vh;
+    background:var(--full-dark);
+    padding:40px;
+    color:var(--full-light);
+    font-family:var(--body-font);
+    }
+    
+    .admin-title{
+    font-family:var(--heading-font);
+    margin-bottom:40px;
+    }
+    
+    .admin-cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:25px;
+    }
+    
+    .admin-card{
+    background:var(--less-dark);
+    padding:25px;
+    border-radius:10px;
+    text-align:center;
+    transition:all 0.3s ease;
+    cursor:pointer;
+    position:relative;
+    overflow:hidden;
+    }
+    
+    .admin-card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 8px 25px rgba(0,0,0,0.5);
+    }
+    
+    .admin-icon{
+    font-size:35px;
+    margin-bottom:10px;
+    display:inline-block;
+    transition:transform 0.3s ease;
+    }
+    
+    .admin-card:hover .admin-icon{
+    transform:scale(1.2) rotate(5deg);
+    }
+    
+    .users{ color:#4da3ff; }
+    .students{ color:#7dd87d; }
+    .instructors{ color:#f5a623; }
+    .courses{ color:#c77dff; }
+    
+    .admin-card h3{
+    margin-bottom:8px;
+    color:var(--less-light);
+    }
+    
+    .admin-card p{
+    font-size:28px;
+    font-weight:600;
+    }
+    
+    .admin-extra{
+    margin-top:40px;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:20px;
+    }
+    
+    .admin-small-card{
+    background:var(--less-dark);
+    padding:20px;
+    border-radius:8px;
+    text-align:center;
+    transition:0.25s;
+    }
+    
+    .admin-small-card:hover{
+    background:#44453f;
+    }
+    
+    .admin-small-card h4{
+    color:var(--less-light);
+    margin-bottom:8px;
+    }
+    
+    .admin-small-card p{
+    font-size:20px;
+    }
+    
+    .admin-loading{
+    color:var(--full-light);
+    text-align:center;
+    padding:100px;
+    font-size:18px;
+    }

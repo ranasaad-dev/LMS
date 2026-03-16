@@ -1,0 +1,14 @@
+.profile-icon{
+    color: var(--full-light);
+    width: 2rem ;
+    height: 2rem;
+}
+
+.navbar-sp{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.navbar-sp p {
+    color: white;
+}

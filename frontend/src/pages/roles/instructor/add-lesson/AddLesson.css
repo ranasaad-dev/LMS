@@ -1,0 +1,120 @@
+.add-lesson-page {
+    padding: 40px;
+    background: var(--full-dark);
+    min-height: 90vh;
+    color: var(--full-light);
+  }
+  
+  .add-lesson-page h2 {
+    font-family: var(--heading-font);
+    margin-bottom: 25px;
+  }
+  
+  /* form */
+  
+  .lesson-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 40px;
+  }
+  
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  
+  .form-group label {
+    color: var(--less-light);
+    font-size: 14px;
+  }
+  
+  .form-group input {
+    background: var(--less-dark);
+    border: none;
+    outline: none;
+    padding: 10px 12px;
+    border-radius: 6px;
+    color: var(--full-light);
+  }
+  
+  /* button */
+  
+  .add-lesson-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--less-light);
+    color: var(--full-dark);
+    padding: 10px 16px;
+    border: none;
+    border-radius: 6px;
+    font-weight: 500;
+    cursor: pointer;
+    width: fit-content;
+  }
+  
+  .add-lesson-btn:hover {
+    opacity: 0.85;
+  }
+  
+  /* error */
+  
+  .form-error {
+    background: rgba(255,0,0,0.15);
+    padding: 8px;
+    border-radius: 6px;
+  }
+  
+  /* lesson list */
+  
+  .lesson-list h3 {
+    font-family: var(--heading-font);
+    margin-bottom: 15px;
+  }
+  
+  .lesson-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--less-dark);
+    padding: 15px 20px;
+    border-radius: 8px;
+    margin-bottom: 12px;
+  }
+  
+  .lesson-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  
+  .lesson-icon {
+    font-size: 22px;
+    color: var(--less-light);
+  }
+  
+  .lesson-info h4 {
+    font-family: var(--heading-font);
+    margin: 0;
+  }
+  
+  .lesson-info p {
+    font-size: 13px;
+    color: var(--less-light);
+    margin: 2px 0 0;
+  }
+  
+  .delete-lesson-btn {
+    background: #b33939;
+    border: none;
+    padding: 6px 10px;
+    border-radius: 6px;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .delete-lesson-btn:hover {
+    opacity: 0.85;
+  }

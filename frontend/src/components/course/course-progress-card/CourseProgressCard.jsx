@@ -1,0 +1,58 @@
+import { Link } from "react-router-dom";
+import ProgressBar from "../../ui/ProgressBar";
+import enrollmentService from "../../../services/enrollmentService";
+import "./CourseProgressCard.css";
+
+function CourseProgressCard({ enrollment }) {
+  const { course, progress } = enrollment;
+
+  const unenroll = async () => {
+    if (!course || !course._id) {
+      alert("Course information is missing.");
+      return;
+    }
+  
+    try {
+      const response = await enrollmentService.unenrollInCourse(course._id);
+  
+      if (response) {
+        alert("Successfully unenrolled from the course.");
+        window.location.reload(); // refresh page
+      } else {
+        alert("Unenrollment failed. Please try again.");
+      }
+  
+    } catch (error) {
+      console.error("Unenroll error:", error);
+      alert("Something went wrong while unenrolling.");
+    }
+  };
+
+  return (
+    course?<div className="course-progress-card">
+
+      <div className="card-body">
+
+        <h3 className="course-title">{course.title}</h3>
+
+        <p className="course-description">
+          {course.description?.substring(0, 100)}...
+        </p>
+
+        <ProgressBar progress={progress || 0} />
+
+        <Link
+          to={`/learn/${course._id}`}
+          className="continue-btn"
+        >
+          Continue Learning
+        </Link>
+<button className="continue-btn" onClick={unenroll}>Unenroll</button>
+      </div>
+
+    </div>:null
+    
+  );
+}
+
+export default CourseProgressCard;
