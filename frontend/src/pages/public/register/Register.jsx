@@ -22,11 +22,13 @@ function Register() {
         navigate("/login");
         notify("Successfuly registred", "success");
       } catch {
-        alert("Registration failed");
+
+        notify("Registration failed", "error");
       }
       
     }else{
-      alert("password didn;t matched.");
+    
+      notify("password didn;t matched.", "warning");
     }
 
   };
