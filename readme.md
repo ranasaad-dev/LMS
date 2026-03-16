@@ -80,11 +80,8 @@ Make sure the following tools are installed on your system:
 ### Install Dependencies (Ubuntu / Linux)
 
 ```bash
-sudo apt update
-sudo apt install git
-sudo apt install nodejs
-sudo apt install npm
-sudo apt install mongodb
+sudo apt update && sudo apt upgrade
+sudo apt install git nodejs npm mongodb
 ```
 
 ## 📦 Installation
@@ -92,7 +89,7 @@ sudo apt install mongodb
 Clone the repository and install dependencies.
 
 ```bash
-git clone 
+git clone https://github.com/ranasaad-dev/LMS.git
 cd LMS
 npm install
 ```
@@ -110,17 +107,16 @@ This will start the MongoDB server in the background.
 
 ## 🔧 Environment Setup
 
-Go to the backend folder and open the .env file.
+Go to the backend folder and create the .env file. Example:
+```
+PORT=3000
+JWT_SECRET="Anything_random_for_JWT_creation"
+MONGO_URI=mongodb://localhost:27017/userDB
+VITE_BACKEND_URL=http://localhost:3000/api
+```
 
 Update the MongoDB connection string:
 
-```
-MONGO_URL=your_mongodb_connection_string
-```
-Example:
-```
-MONGO_URL=mongodb://127.0.0.1:27017/lms
-```
 ## ▶️ Running the Project
 
 #### Start the development server:
@@ -145,11 +141,9 @@ The system uses JWT authentication.
 
 User Roles
 
-student
-
-instructor
-
-admin
+* student
+* instructor
+* admin
 
 ## Protected routes require:
 
