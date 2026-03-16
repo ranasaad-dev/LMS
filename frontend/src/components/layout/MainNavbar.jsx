@@ -36,7 +36,8 @@ const lochome = redhome();
          )}
       </div>
 
-      <Sidebar isOpen={sidebarOpen} closeSidebar={() => setSidebarOpen(false)} />
+
+<Sidebar isOpen={sidebarOpen} closeSidebar={() => setSidebarOpen(false)} />
     </nav>
   );
 }

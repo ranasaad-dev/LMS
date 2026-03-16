@@ -25,15 +25,15 @@ const getProfile = async () => {
   return response.data;
 };
 
-const updateProfile = async (id, name, password) => {
-  const response = await apiClient.get(`/auth/profile:${id}`,{
-    name,
-    password
-  });
-  return response.data;
+const updateProfile = async (id, data) => {
+  try {
+    const response = await apiClient.put(`/auth/profile/${id}`, data);
+    return response.data;
+    console.log(response.data);
+  } catch (error) {
+    throw error.response?.data || { message: error };
+  }
 };
-
-
 
 export default {
   register,

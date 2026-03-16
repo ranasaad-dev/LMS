@@ -6,7 +6,7 @@ import "./Sidebar.css";
 
 function Sidebar({ isOpen, closeSidebar }) {
 
-const {logout, user} = useAuth();
+  const { logout, user } = useAuth();
 
   const token = localStorage.getItem("token");
   const navigate = useNavigate();
@@ -40,35 +40,34 @@ const {logout, user} = useAuth();
       <aside ref={sidebarRef} className={`sidebar-drawer ${isOpen ? "open" : ""}`} >
         <div>
 
-        <div className="sidebar-logo">
-          {user?<h2>{user.name}</h2>:<h2>Login</h2>}
-        </div>
+          <div className="sidebar-logo">
+            {user ? <h2>{user.name}</h2> : <h2>Login</h2>}
+          </div>
 
-        <nav className="sidebar-navigation">
+          <nav className="sidebar-navigation">
 
-          {token && (
-            <NavLink to={`/dashboard/${user._id}`} className="sidebar-link">
-              <FaTachometerAlt /> <span>Dashboard</span>
+            {token && (
+              <NavLink to={`/dashboard/${user._id}`} className="sidebar-link">
+                <FaTachometerAlt /> <span>Dashboard</span>
+              </NavLink>
+            )}
+            {(token && user.role === "student") && (
+              <NavLink to="/my-courses" className="sidebar-link">
+                <FaBookOpen /> <span>My Courses</span>
+              </NavLink>
+            )}
+
+            {token && (
+              <NavLink to="/profile" className="sidebar-link">
+                <FaUser /> <span>Profile</span>
+              </NavLink>
+            )}
+
+            <NavLink to="/about" className="sidebar-link">
+              <FaInfoCircle /> <span>About</span>
             </NavLink>
-          )}
 
-          {token && (
-            <NavLink to="/my-courses" className="sidebar-link">
-              <FaBookOpen /> <span>My Courses</span>
-            </NavLink>
-          )}
-
-          {token && (
-            <NavLink to="/profile" className="sidebar-link">
-              <FaUser /> <span>Profile</span>
-            </NavLink>
-          )}
-
-          <NavLink to="/about" className="sidebar-link">
-            <FaInfoCircle /> <span>About</span>
-          </NavLink>
-
-        </nav>
+          </nav>
 
         </div>
         {token && (

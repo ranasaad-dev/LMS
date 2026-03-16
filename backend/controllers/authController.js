@@ -39,9 +39,6 @@ exports.register = async (req, res) => {
     res.status(500).json({ message: error.message });
   }
 };
-
-
-
 // LOGIN
 exports.login = async (req, res) => {
 
@@ -78,16 +75,13 @@ exports.login = async (req, res) => {
   }
 
 };
-
-
-
 // PROFILE
 exports.getProfile = async (req, res) => {
 
   try {
 
-    const user = await User.findById(req.user.id).select("-password");
-
+    const user = await User.findById(req.user.id);
+    user.password = undefined;
     res.json(user);
 
   } catch (error) {
@@ -96,19 +90,53 @@ exports.getProfile = async (req, res) => {
 
 };
 
-
-// PUT update user
 exports.updateUser = async (req, res) => {
-  try {
-    const updatedUser = await User.findByIdAndUpdate(
-      req.params.id,
-      { name: req.body.name, password: req.body.password },
-      { new: true, runValidators: true } // Return updated doc, validate input
-    );
+  const { name, currentPassword, newPassword } = req.body;
+  
+  // req.user comes from JWT middleware
+  const user = await User.findById(req.user.id);
+  if (!user) {
+    return res.status(404).json({
+      message: "User not found"
+    });
+  }
+  
+  if (!currentPassword) {
+    return res.status(400).json({
+      message: "Current password required"
+    });
+  }
+  const isMatch = await bcrypt.compare(
+    currentPassword,
+    user.password
+  );
 
-    if (!updatedUser) return res.status(404).json({ message: "User not found" });
+  if (!isMatch) {
+    return res.status(400).json({
+      message: "Current password is incorrect"
+    });
+  }
+
+
+  try {
+
+    if (name) {
+      user.name = name;
+    }
+
+    if (newPassword) {
+      const salt = await bcrypt.genSalt(10);
+      user.password = await bcrypt.hash(newPassword, salt);
+    }
+
+    const updatedUser = await user.save();
+    updatedUser.password = undefined;
+
     res.json(updatedUser);
-  } catch (err) {
-    res.status(400).json({ message: err.message });
+
+  } catch (error) {
+    res.status(500).json({
+      message: error.message
+    });
   }
 };
