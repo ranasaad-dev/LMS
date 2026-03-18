@@ -7,6 +7,7 @@ const courseRoutes = require("./routes/courseRoutes");
 const lessonRoutes = require("./routes/lessonRoutes");
 const enrollmentRoutes = require("./routes/enrollmentRoutes");
 const reviewRoutes = require("./routes/reviewRoutes");
+const notificationRoutes = require("./routes/notificationRoutes");
 const PORT = 3000;
 const connectDB = require('./db');
 const cors = require("cors");
@@ -29,6 +30,7 @@ app.use("/api/auth", authRoutes);
 app.use("/api/lessons", lessonRoutes);
 app.use("/api/enroll", enrollmentRoutes);
 app.use("/api/reviews", reviewRoutes);
+app.use("/api/notification", notificationRoutes);
 
 
 app.listen(PORT, () => {
