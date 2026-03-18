@@ -1,0 +1,116 @@
+.notice-board-parent-container {
+    color: var(--full-light);
+    text-align: center;
+    padding: 1rem;
+}
+
+.notice-board-container {
+    width: 40%;
+    max-height: 70vh;
+    /* limit height */
+    background: linear-gradient(145deg, #ffffff, #e0e0e0);
+    border: 2px solid #000;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+
+    /* Flex removed for vertical centering */
+    display: block;
+    /* let content flow naturally */
+    margin: 12px auto;
+    padding: 2rem 20px;
+
+    overflow-y: auto;
+    /* scroll if too tall */
+}
+
+/* Optional: give inner container spacing */
+.notification-card {
+    background-color: #000;
+    color: #fff;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: left;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    word-wrap: break-word;
+    white-space: pre-wrap;
+    line-height: 1.4;
+}
+
+/* Notice Board title */
+.notice-board-container h1 {
+    margin-bottom: 20px;
+    color: #000;
+    font-size: 1.8rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Hover effect */
+.notification-card:hover {
+    background: linear-gradient(120deg, #000, #333);
+    transform: scale(1.03) rotate(1deg);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Notification title */
+.notification-card h4 {
+    margin: 0 0 10px 0;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+/* Notification body */
+.notification-card p {
+    margin: 0;
+    font-size: 0.95rem;
+}
+
+/* Optional: last notification without bottom margin */
+.notification-card:last-child {
+    margin-bottom: 0;
+}
+
+/* ------------------------- */
+/* RESPONSIVE MEDIA QUERIES */
+/* ------------------------- */
+@media (max-width: 768px) {
+  .notice-board-container {
+    width: 80%;
+    padding: 1.5rem 15px;
+  }
+
+  .notice-board-container h1 {
+    font-size: 1.5rem;
+  }
+
+  .notification-card h4 {
+    font-size: 1rem;
+  }
+
+  .notification-card p {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .notice-board-container {
+    width: 95%;
+    padding: 1rem 10px;
+  }
+
+  .notice-board-container h1 {
+    font-size: 1.3rem;
+  }
+
+  .notification-card h4 {
+    font-size: 0.95rem;
+  }
+
+  .notification-card p {
+    font-size: 0.85rem;
+  }
+}
