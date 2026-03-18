@@ -1,6 +1,6 @@
 .features-section {
   padding: 80px 20px;
-  background-color: var(--section-bg, #f8f9fa);
+  background: linear-gradient(100deg, #9da9b4,#3f4852);
   text-align: center;
 }
 

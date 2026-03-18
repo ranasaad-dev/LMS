@@ -30,24 +30,23 @@
   /* delete button */
   
   .delete-course-btn {
-  
     display: flex;
     align-items: center;
     gap: 8px;
-  
     background: #b33939;
-  
     border: none;
-  
+    margin-top: 24px;
     padding: 10px 14px;
-  
     border-radius: 6px;
-  
-    color: white;
-  
+    color: white;  
     cursor: pointer;
   }
   
+  .delete-course-icon{
+    width: 18px;
+    height: 18px;
+    margin: 5px;
+  }
   /* grid */
   
   .manage-grid {

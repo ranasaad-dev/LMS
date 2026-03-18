@@ -78,7 +78,7 @@ function CourseManage() {
           className="delete-course-btn"
           onClick={handleDeleteCourse}
         >
-          <FaTrash />
+          <FaTrash className="delete-course-icon" />
           Delete Course
         </button>
 
@@ -103,8 +103,7 @@ function CourseManage() {
           <h3>Add Lessons</h3>
           <p>Create and manage lessons for this course.</p>
         </div>
-        {/****These features are not required in the final project. I planned to implement them but as time is too thin for me, so i will implement them later. You can check my github my any changelog. */}
-{/* 
+
         <div
           className="manage-card"
           onClick={() => navigate(`/course/${id}/students`)}
@@ -112,16 +111,16 @@ function CourseManage() {
           <FaUsers className="manage-icon" />
           <h3>View Students</h3>
           <p>See students enrolled in this course.</p>
-        </div> */}
+        </div>
 
-        {/* <div
+        <div
           className="manage-card"
           onClick={() => navigate(`/course/${id}/reviews`)}
         >
           <FaStar className="manage-icon" />
           <h3>View Reviews</h3>
           <p>Check ratings and feedback from students.</p>
-        </div> */}
+        </div>
 
       </div>
 

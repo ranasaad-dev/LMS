@@ -1,4 +1,5 @@
 .call-to-action-section {
+  position: relative;       /* parent for canvas */
   background-color: var(--full-dark);
   color: var(--full-light);
   padding: 80px 20px;
@@ -6,6 +7,11 @@
   align-items: center;
   justify-content: center;
   text-align: center;
+  overflow: hidden;        /* keep bubbles inside */
+}
+
+.call-to-action-content{
+  z-index: 1;
 }
 
 .call-to-action-content h3 {
@@ -73,4 +79,14 @@
     font-size: 1rem;
     padding: 14px 28px;
   }
+}
+
+#bubbleCanvas {
+  position: absolute;   /* relative to parent */
+  top: 0;
+  left: 0;
+  width: 100%;          /* fill parent width */
+  height: 100%;         /* fill parent height */
+
+  z-index: 0;           /* behind content */
 }
