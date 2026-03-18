@@ -11,7 +11,7 @@ exports.createNotification = async (req, res) =>{
 
 exports.getNotification = async (req, res) => {
     try{
-        const notifications = Notification.find();
+        const notifications = await Notification.find();
         if(!notifications) return res.status(404).json({"message":"No notification found."});
            
            return res.json(notifications);

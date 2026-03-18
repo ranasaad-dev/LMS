@@ -19,7 +19,7 @@ import AddLesson from "./pages/roles/instructor/add-lesson/AddLesson"
 import UpdateCourse from "./pages/roles/instructor/edit-course/UpdateCourse";
 import ManageUsers from "./pages/roles/admin/manage-user/ManageUsers";
 import ManageCourses from "./pages/roles/admin/manage-course/ManageCourse";
-
+import Notification from "./pages/public/notification/Notification";
 
 function App() {
   return (
@@ -46,7 +46,7 @@ function App() {
           <Route path="/course/:id/edit" element={<ProtectedRoute> <UpdateCourse /> </ProtectedRoute>} />
           <Route path="/dashboard/:id/users" element={<ProtectedRoute> <ManageUsers /> </ProtectedRoute>} />
           <Route path="/dashboard/:id/courses" element={<ProtectedRoute> <ManageCourses /> </ProtectedRoute>} />
-          
+          <Route path="/NoticeBoard" element={<Notification />} />
         </Routes>
 
       </MainLayout>

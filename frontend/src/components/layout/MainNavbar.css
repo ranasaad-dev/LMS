@@ -12,3 +12,17 @@
 .navbar-sp p {
     color: white;
 }
+.notification-icon{
+    color: var(--full-light);
+    width: 1.5rem ;
+    height: 1.5rem;
+    margin-right: 1rem;
+    margin-top: 6px;
+    transition: transform 0.1s ease, color 0.3s ease;
+}
+
+.notification-icon:hover{
+    color: blue;
+    filter: drop-shadow(0 4px 8px rgba(0,0,0,0.2));
+    transform: scale(1.15) rotate(10deg);
+}
