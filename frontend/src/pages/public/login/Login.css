@@ -28,6 +28,8 @@
 .login-form .form-group {
   text-align: left;
   margin-bottom: 20px;
+  position: relative;
+
 }
 
 .login-form label {
@@ -41,7 +43,7 @@
 .login-form input {
   width: 100%;
   padding: 12px 15px;
-  border: 1px solid #ccc;
+  border: 1px solid #050505;
   border-radius: 8px;
   font-family: var(--body-font, "Inter", sans-serif);
   font-size: 1rem;
@@ -50,8 +52,26 @@
 
 .login-form input:focus {
   outline: none;
-  border-color: #ff6f61;
+  border-color: #131212;
   box-shadow: 0 0 0 2px rgba(255, 111, 97, 0.2);
+}
+
+.eye-icon {
+  position: absolute;
+  right: 12px;
+  top: 70%;
+
+  transform: translateY(-50%);
+  color: #ffffff;
+  height: 1.3rem;
+  width: 1.3rem;
+  cursor: pointer;
+}
+
+/* optional: prevent text overlap with icon */
+.login-form input[type="password"],
+.login-form input[type="text"] {
+  padding-right: 40px;
 }
 
 .login-btn {
@@ -61,7 +81,7 @@
   font-size: 1.1rem;
   font-weight: 700;
   color: #fff;
-  background-color: #ff6f61;
+  background-color: #0f0f0e;
   border: none;
   border-radius: 10px;
   cursor: pointer;
@@ -69,8 +89,9 @@
 }
 
 .login-btn:hover {
-  background-color: #ff4f3c;
+  background-color: #e9e8e8;
   transform: translateY(-2px);
+  color: #000;
 }
 
 @media (max-width: 480px) {

@@ -27,6 +27,7 @@
 .register-form .form-group {
   text-align: left;
   margin-bottom: 20px;
+  position: relative;
 }
 
 .register-form label {
@@ -34,7 +35,7 @@
   font-family: var(--body-font, "Inter", sans-serif);
   font-weight: 600;
   margin-bottom: 8px;
-  color: #333;
+  color: #000000;
 }
 
 .register-form input {
@@ -49,8 +50,33 @@
 
 .register-form input:focus {
   outline: none;
-  border-color: #ff6f61;
+  border-color: #000000;
   box-shadow: 0 0 0 2px rgba(255, 111, 97, 0.2);
+}
+
+
+/* Password icon */
+.eye-icon-password {
+  position: absolute;
+  right: 12px;
+  top: 72%;
+  transform: translateY(-50%);
+  color: #ffffff;
+  height: 1.3rem;
+  width: 1.3rem;
+  cursor: pointer;
+}
+
+/* Confirm password icon */
+.eye-icon-confirm {
+  position: absolute;
+  right: 12px;
+  top: 72%;
+  transform: translateY(-50%);
+  color: #ffffff;
+  height: 1.3rem;
+  width: 1.3rem;
+  cursor: pointer;
 }
 
 .register-btn {
@@ -60,7 +86,7 @@
   font-size: 1.1rem;
   font-weight: 700;
   color: #fff;
-  background-color: #ff6f61;
+  background-color: #000000;
   border: none;
   border-radius: 10px;
   cursor: pointer;
@@ -68,8 +94,9 @@
 }
 
 .register-btn:hover {
-  background-color: #ff4f3c;
+  background-color: #ffffff;
   transform: translateY(-2px);
+  color: #000000;
 }
 
 @media (max-width: 480px) {

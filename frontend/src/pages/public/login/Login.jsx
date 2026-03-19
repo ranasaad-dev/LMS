@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useAuth } from "/src/context/AuthContext";
 import Loading from "/src/components/ui/Loading"
 import notify from "../../../components/ui/notify/Notify";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 import "./Login.css";
 
 const Login = () => {
@@ -12,6 +13,7 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
+const [isHidden, setIsHidden] = useState(true);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -46,7 +48,11 @@ const Login = () => {
           </div>
           <div className="form-group">
             <label>Password</label>
-            <input type="password" value={password} minLength={8} onChange={(e) => setPassword(e.target.value)} required placeholder="Enter your password" />
+
+            <input type={isHidden?"password":"text"} value={password} minLength={8} onChange={(e) => setPassword(e.target.value)} required placeholder="Enter your password" />
+         
+         {isHidden? <FaEyeSlash onClick={()=> setIsHidden(!isHidden)} className="eye-icon" />:<FaEye onClick={()=> setIsHidden(!isHidden)} className="eye-icon" />} 
+           
           </div>
           <button type="submit" className="login-btn">
             Login
