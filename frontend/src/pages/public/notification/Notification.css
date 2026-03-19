@@ -4,6 +4,17 @@
     padding: 1rem;
 }
 
+.head{
+  display: flex;
+align-items: center;
+justify-content: center;
+text-align: center;
+gap: 64px;
+}
+
+.mg-t{
+  margin-top: 12px;
+}
 .notice-board-container {
     width: 40%;
     max-height: 70vh;
@@ -25,28 +36,66 @@
     /* scroll if too tall */
 }
 
-/* Optional: give inner container spacing */
-.notification-card {
-    background-color: #000;
-    color: #fff;
-    padding: 15px;
-    margin-bottom: 15px;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    text-align: left;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-    word-wrap: break-word;
-    white-space: pre-wrap;
-    line-height: 1.4;
-}
-
 /* Notice Board title */
 .notice-board-container h1 {
     margin-bottom: 20px;
     color: #000;
     font-size: 1.8rem;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+.notification-card {
+  background: var(--less-dark);
+  padding: 16px;
+  border-radius: 10px;
+  margin-bottom: 16px;
+  position: relative;
+  transition: 0.3s ease;
+}
+
+/* HEADER */
+.notification-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.notification-header h4 {
+  color: var(--full-light);
+  font-family: var(--heading-font);
+}
+
+/* ACTION ICONS */
+.notification-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.notification-actions svg {
+  cursor: pointer;
+  color: var(--less-light);
+  transition: 0.2s ease;
+}
+
+.notification-actions svg:hover {
+  color: var(--full-light);
+  transform: scale(1.1);
+}
+
+/* BODY */
+.notification-body {
+  margin-top: 10px;
+  color: var(--full-light);
+  opacity: 0.9;
+  font-family: var(--body-font);
+}
+
+/* DATE */
+.notification-date {
+  position: absolute;
+  bottom: 10px;
+  right: 15px;
+  font-size: 12px;
+  color: var(--less-light);
 }
 
 /* Hover effect */
@@ -56,22 +105,87 @@
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
 }
 
-/* Notification title */
-.notification-card h4 {
-    margin: 0 0 10px 0;
-    font-size: 1.1rem;
-    font-weight: bold;
+.add-btn {
+  margin-bottom: 15px;
+  padding: 8px 12px;
+  cursor: pointer;
 }
 
-/* Notification body */
-.notification-card p {
-    margin: 0;
-    font-size: 0.95rem;
+/* Overlay covers full screen */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  z-index: 999; /* ensures it's above everything */
 }
 
-/* Optional: last notification without bottom margin */
-.notification-card:last-child {
-    margin-bottom: 0;
+/* Modal box perfectly centered */
+.modal {
+  background: #fff;
+  padding: 25px 20px;
+  border-radius: 12px;
+display: flex;
+flex-direction: column;
+color: #000;
+padding-top: 10px;
+  margin: 12.5% 25%;
+  width: 50%;
+height: 50%;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+
+  animation: modalFade 0.25s ease;
+}
+
+.modal-overlay .modal h3{
+  padding-bottom: 1rem;
+}
+
+.textarea{
+  color: black;
+  font-weight: 600;
+  border: 1px solid black;
+}
+
+.btn-cancel{
+  background-color: rgb(255, 255, 255);
+  color: #000;
+  border: 1px solid rgb(0, 0, 0);
+}
+.btn-cancel:hover {
+  background-color: #000;
+  color: #fff;
+  font-weight: 800;
+}
+/* smooth appearance */
+@keyframes modalFade {
+  from {
+    opacity: 0;
+    transform: translateY(-20px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.modal input,
+.modal textarea {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 8px;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: space-between;
 }
 
 /* ------------------------- */
