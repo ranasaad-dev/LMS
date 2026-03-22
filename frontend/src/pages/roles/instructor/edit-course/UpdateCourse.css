@@ -38,7 +38,6 @@
     font-size:14px;
     }
     
-    .form-group input,
     .form-group textarea{
     background:var(--full-dark);
     border:none;
@@ -46,9 +45,6 @@
     border-radius:6px;
     color:var(--full-light);
     font-family:var(--body-font);
-    }
-    
-    .form-group textarea{
     min-height:120px;
     resize:vertical;
     }

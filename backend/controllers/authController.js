@@ -7,7 +7,7 @@ const generateToken = require("../utils/generateToken");
 exports.register = async (req, res) => {
   try {
 
-    const { name, email, password, role } = req.body;
+    const { name, email, password } = req.body;
 
     // check existing user
     const existingUser = await User.findOne({ email });
@@ -20,7 +20,6 @@ exports.register = async (req, res) => {
       name,
       email,
       password,
-      role
     });
 
     const token = generateToken(user._id, user.role);

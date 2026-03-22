@@ -1,8 +1,6 @@
 .course-manage {
-
     padding: 40px;
     min-height: 100vh;
-  
     background: var(--full-dark);
     color: var(--full-light);
   }
@@ -10,11 +8,9 @@
   /* header */
   
   .course-header {
-  
     display: flex;
     justify-content: space-between;
     align-items: center;
-  
     margin-bottom: 40px;
   }
   
@@ -50,30 +46,21 @@
   /* grid */
   
   .manage-grid {
-  
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  
     gap: 25px;
   }
   
   /* cards */
   
   .manage-card {
-  
     background: var(--less-dark);
-  
     padding: 25px;
-  
     border-radius: 10px;
-  
     cursor: pointer;
-  
     transition: 0.2s;
-  
     display: flex;
     flex-direction: column;
-  
     gap: 10px;
   }
   
@@ -98,13 +85,10 @@
   /* loading */
   
   .manage-loading {
-  
     display: flex;
     justify-content: center;
     align-items: center;
-  
     height: 80vh;
-  
     background: var(--full-dark);
     color: var(--full-light);
   }

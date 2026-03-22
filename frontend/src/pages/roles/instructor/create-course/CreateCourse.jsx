@@ -1,52 +1,38 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { FaBook, FaDollarSign, FaImage } from "react-icons/fa";
-
+import { useAuth } from "/src/context/AuthContext";
 import courseService from "../../../../services/courseService";
-
+import Input from "../../../../components/ui/input/Input";
 import "./CreateCourse.css";
 
-function CreateCourse() {
+export default function CreateCourse() {
 
   const navigate = useNavigate();
-
-  const [formData, setFormData] = useState({
-    title: "",
-    description: "",
-    price: "",
-    category: "",
-    thumbnail: ""
-  });
-
+  const { user } = useAuth();
+  const [formData, setFormData] = useState({ title: "", description: "", price: "", category: "", thumbnail: "" });
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
-
   const { title, description, price, category, thumbnail } = formData;
 
   const handleChange = (e) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value
-    });
-  };
+    }); };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
     if (!title || !description || !category) {
       setError("Please fill all required fields.");
-      return;
+      return; 
     }
 
     try {
-
       setLoading(true);
       setError("");
-
       const newCourse = await courseService.createCourse(formData);
-
-      navigate(`/courses/${newCourse._id}`);
-
+      navigate(`/dashboard/${user._id}`);
     } catch (err) {
       console.error(err);
       setError("Failed to create course.");
@@ -57,101 +43,48 @@ function CreateCourse() {
 
   return (
     <div className="create-course-page">
-
       <div className="create-course-container">
-
         <h2>Create New Course</h2>
-
         {error && <div className="form-error">{error}</div>}
-
         <form onSubmit={handleSubmit} className="create-course-form">
-
           <div className="form-group">
             <label>Course Title</label>
-
             <div className="input-group">
               <FaBook />
-              <input
-                type="text"
-                name="title"
-                placeholder="Enter course title"
-                value={title}
-                onChange={handleChange}
-              />
+              <Input t="text" n="title" p="Enter course title" v={formData.title} o={handleChange} />
             </div>
           </div>
-
           <div className="form-group">
             <label>Description</label>
-
-            <textarea
-              name="description"
-              placeholder="Write course description..."
-              value={description}
-              onChange={handleChange}
-            />
+            <textarea name="description" p="Write course description..." value={description} onChange={handleChange} />
           </div>
-
           <div className="form-row">
-
             <div className="form-group">
               <label>Price ($)</label>
-
               <div className="input-group">
                 <FaDollarSign />
-                <input
-                  type="number"
-                  name="price"
-                  placeholder="49"
-                  value={price}
-                  onChange={handleChange}
-                />
+                <Input t="number" n="price" p="49" v={price} o={handleChange} />
               </div>
             </div>
-
             <div className="form-group">
               <label>Category</label>
-
-              <input
-                type="text"
-                name="category"
-                placeholder="Web Development"
-                value={category}
-                onChange={handleChange}
-              />
+              <Input t="text" name="category" p="Web Development" v={category} o={handleChange} />
             </div>
-
           </div>
-
           <div className="form-group">
             <label>Thumbnail URL</label>
-
             <div className="input-group">
               <FaImage />
-              <input
-                type="text"
-                name="thumbnail"
-                placeholder="https://image-url.com/course.jpg"
-                value={thumbnail}
-                onChange={handleChange}
-              />
+              <Input t="text" name="thumbnail" p="https://image-url.com/course.jpg" v={thumbnail} o={handleChange} />
             </div>
           </div>
 
-          <button
-            type="submit"
-            className="create-course-btn"
-            disabled={loading}
-          >
+          <button t="submit" className="create-course-btn" disabled={loading} >
             {loading ? "Creating Course..." : "Create Course"}
           </button>
-
         </form>
-
       </div>
-
     </div>
   );
 }
 
-export default CreateCourse;

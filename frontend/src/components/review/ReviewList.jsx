@@ -1,31 +1,53 @@
-import { Card } from "react-bootstrap";
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import reviewService from "/src/services/reviewService";
+import notify from "/src/components/ui/notify/Notify";
 
-function ReviewList({ reviews }) {
+function ReviewList({r, sr}) {
 
-  if (!reviews.length) {
-    return <p>No reviews yet.</p>;
-  }
+  const { courseId } = useParams();
+  const [reviewLoading, setReviewLoading] = useState(true);
+
+
+    const fetchReviews = async () => {
+      try {
+        setReviewLoading(true);
+        const data = await reviewService.getCourseReviews(courseId);
+        sr(data);
+      } catch (err) {
+        notify(`Failed to load reviews: ${err}`, "error");
+      } finally {
+        setReviewLoading(false);
+      }
+    };
+  
+    useEffect(() => { 
+        fetchReviews();
+      }, [courseId]);
+    
 
   return (
-    <>
-      {reviews.map((review) => (
-        <Card key={review._id} className="mb-3">
-
-          <Card.Body>
-
-            <strong>{review.user?.name}</strong>
-
-            <p className="mb-1">
-              Rating: {review.rating}/5
-            </p>
-
-            <p>{review.comment}</p>
-
-          </Card.Body>
-
-        </Card>
-      ))}
-    </>
+    <div className="review-list">
+    {reviewLoading ? (
+      <p className="review-loading">Loading reviews...</p>
+    ) : r.length === 0 ? (
+      <p className="review-empty">No reviews yet.</p>
+    ) : (
+      r.map((rev) => (
+        <div key={rev._id} className="review-card">
+          <div className="review-header">
+            <span className="review-user">
+              {rev.student?.name || "Student"}
+            </span>
+            <span className="review-rating">
+              {"⭐".repeat(rev.rating)}
+            </span>
+          </div>
+          <p className="review-comment">{rev.comment}</p>
+        </div>
+      ))
+    )}
+  </div>
   );
 }
 

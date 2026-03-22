@@ -1,39 +1,26 @@
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-
-import {
-  FaEdit,
-  FaTrash,
-  FaPlusCircle,
-  FaUsers,
-  FaStar
-} from "react-icons/fa";
-
+import { FaEdit, FaTrash, FaPlusCircle, FaUsers, FaStar } from "react-icons/fa";
 import courseService from "../../../../services/courseService";
-
+import { useAuth } from "/src/context/AuthContext";
 import "./ManageCourse.css";
 
 function CourseManage() {
 
   const { id } = useParams();
   const navigate = useNavigate();
-
   const [course, setCourse] = useState(null);
   const [loading, setLoading] = useState(true);
-
+  const { user } = useAuth();
   useEffect(() => {
 
     const fetchCourse = async () => {
       try {
-
         const data = await courseService.getCourseById(id);
         setCourse(data);
-
       } catch (error) {
         console.error("Failed to load course", error);
-      } finally {
-        setLoading(false);
-      }
+      } finally { setLoading(false); }
     };
 
     fetchCourse();
@@ -49,11 +36,8 @@ function CourseManage() {
     if (!confirmDelete) return;
 
     try {
-
       await courseService.deleteCourse(id);
-
-      navigate("dashboard");
-
+      navigate(`/dashboard/${user._id}`);
     } catch (error) {
       console.error("Delete failed", error);
     }
