@@ -14,18 +14,22 @@ The project is inspired by platforms like **Udemy** and **Coursera**.
 - View course details
 - Enroll in courses
 - Watch lessons
-- Track learning progress
+- Track learning progress (Soon)
 - Write course reviews
 - Manage profile
-
+- Stay up-to-date throgh Notice Board
+  
 ## 👨‍🏫 Instructor Features
 - Create courses
 - Manage lessons
 - Update course content
+- Manage Notice Board
 
 ## 👑 Admin Features
 - Manage users
 - Monitor platform data
+- Manage Notice Board
+- Monitor Courses
 
 ---
 
@@ -57,10 +61,12 @@ The system uses **MongoDB** with the following collections:
 - Lessons
 - Enrollments
 - Reviews
+- notification
 
 ### Relationships
 
 - **Instructor → creates → Course**
+- **Instructor → creates → Lessons**
 - **Course → contains → Lessons**
 - **Student → enrolls → Course**
 - **Student → writes → Review**
@@ -89,8 +95,8 @@ sudo apt install git nodejs npm mongodb
 Clone the repository and install dependencies.
 
 ```bash
-git clone https://github.com/ranasaad-dev/LMS.git
-cd LMS
+git clone https://github.com/ranasaad-dev/LMS-Learning-Management-System.git
+cd LMS-Learning-Management-System
 npm install
 ```
 ## 🗄 Start MongoDB
@@ -107,29 +113,40 @@ This will start the MongoDB server in the background.
 
 ## 🔧 Environment Setup
 
-Go to the backend folder and create the .env file. Example:
+Go to the backend folder and create the .env file, required for server to work correctly. Example:
 ```
 PORT=3000
 JWT_SECRET="Anything_random_for_JWT_creation"
 MONGO_URI=mongodb://localhost:27017/userDB
 VITE_BACKEND_URL=http://localhost:3000/api
 ```
-
-Update the MongoDB connection string:
+Now, Go to the frontend folder and create the .env file, required for services to work correctly. Example:
+```
+VITE_BACKEND_URL=http://localhost:3000/api
+```
+Update MONGO_URI and JWT_SECRET :
 
 ## ▶️ Running the Project
 
 #### Start the development server:
+In "LMS-Learning-Management-System" directory, run
 ```
 npm run dev
 ```
 The application will start at:
 
 http://localhost:5173
+
+#### Create Admin user:
+* To create 'admin' user, Run this curl command:
+```
+  curl -X POST -H 'Content-Type: application/json' -d '{"name":"Admin","email":"admin@lms.com","password":"12345678","role":"admin"}' http://localhost:3000/api/users
+```
+This path is intentionally open for creation of Admin. After creating Admin, **protect**  in **/backend/routes/userRoutes.js** like this **router.post("/", protect, userController.createUser);** . Now there is no way to create admin account except using admin token or dashboard.
+
 #### 📡 API Server
 
 Backend API runs on:
-
 http://localhost:3000
 
 #### API Base URL:
@@ -172,10 +189,8 @@ LMS
 
 ### Possible future features:
 Course search and filters
-Instructor dashboards
 Video streaming optimization
 Payment integration
-Notifications system
 Course certificates
 
 ## 👨‍💻 Author

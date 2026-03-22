@@ -1,0 +1,8 @@
+ .inputComponent{
+    background:var(--full-dark);
+    border: 10px solid white;
+    padding:10px;
+    border-radius:6px;
+    color:var(--full-light);
+    font-family:var(--body-font);
+}
